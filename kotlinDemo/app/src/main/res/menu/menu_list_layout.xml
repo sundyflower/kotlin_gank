@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:id="@+id/group1"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/item_fl"
+            android:icon="@mipmap/fuli_icon"
+            android:title="福利" />
+        <item
+            android:id="@+id/item_android"
+            android:icon="@mipmap/aicon"
+            android:title="Android" />
+        <item
+            android:id="@+id/item_ios"
+            android:icon="@mipmap/ios_icon"
+            android:title="iOS" />
+        <item
+            android:id="@+id/item_vide"
+            android:icon="@mipmap/video_icon"
+            android:title="休息视频" />
+        <item
+            android:id="@+id/item_tz"
+            android:icon="@mipmap/tuozhan_icon"
+            android:title="拓展资源" />
+        <item
+            android:id="@+id/item_qd"
+            android:icon="@mipmap/qianduan_icon"
+            android:title="前端" />
+        <item
+            android:id="@+id/item_girl"
+            android:icon="@mipmap/girl_icon"
+            android:title="妹子" />
+    </group>
+
+</menu>

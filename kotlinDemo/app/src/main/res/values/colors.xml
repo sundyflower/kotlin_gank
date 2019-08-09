@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#00a0ff</color>
+    <color name="trans_half">#88000000</color>
+    <color name="title_333">#333333</color>
+    <color name="title_777">#797979</color>
+</resources>

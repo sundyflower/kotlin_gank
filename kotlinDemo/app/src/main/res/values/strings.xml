@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">kotlinDemo</string>
+    <string name="tool_open">打开</string>
+    <string name="tool_close">关闭</string>
+
+
+
+</resources>

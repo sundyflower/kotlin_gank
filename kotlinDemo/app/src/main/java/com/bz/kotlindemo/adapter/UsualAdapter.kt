@@ -14,13 +14,16 @@ class UsualAdapter(context: Context, layoutResId: Int, data: List<com.bz.kotlind
         this.context = context
     }
 
-    override fun convert(helper: BaseViewHolder?, item: com.bz.kotlindemo.enty.Result?) {
-        if (item!!.images!=null && item!!.images.isNotEmpty()) {
-            ImageLoadUtil.loadNetImg(context!!, item!!.images!![0], helper!!.getView(R.id.iv_them))
-        }
-        helper!!.setText(R.id.tv_title, item!!.desc)
-        helper!!.setText(R.id.tv_time, item!!.createdAt.substring(0,10))
-        helper!!.setText(R.id.tv_writer, item!!.who)
+    override fun convert( /
+                          '\
+
+    ghelper: BaseViewHolder, item: com.bz.kotlindemo.enty.Result) {
+
+            ImageLoadUtil.loadNetImg(context!!, item.images!![0], helper.getView(R.id.iv_them))
+
+        helper.setText(R.id.tv_title, item.desc)
+        helper.setText(R.id.tv_time, item.createdAt.substring(0,10))
+        helper.setText(R.id.tv_writer, item.who)
 
     }
 

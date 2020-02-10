@@ -9,6 +9,7 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
 class ApiRetrofit private constructor() {
+
     private val DEFAULT_TIMEOUT: Long = 15
     companion object {
         val instance: ApiRetrofit by lazy(mode = LazyThreadSafetyMode.SYNCHRONIZED) {

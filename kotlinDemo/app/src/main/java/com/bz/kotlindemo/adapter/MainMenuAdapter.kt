@@ -20,18 +20,18 @@ class MainMenuAdapter(context: Context, layoutResId: Int, data: List<MenuBean>) 
         this.context = context
     }
 
-    override fun convert(helper: BaseViewHolder?, item: MenuBean?) {
-        if (helper != null && item != null) {
-            helper!!.setImageResource(R.id.iv_icon, item!!.imgRes)
-            helper!!.setText(R.id.tv_title, item!!.title)
+    override fun convert(helper: BaseViewHolder, item: MenuBean) {
+
+            helper.setImageResource(R.id.iv_icon, item.imgRes)
+            helper.setText(R.id.tv_title, item.title)
             LogUtils.dTag("adapterposition", helper.adapterPosition)
-        }
+
 
 //        helper!!.setImageResource(R.id.iv_icon, item!!.imgRes)
 //        helper!!.setText(R.id.tv_title, item!!.title)
 
 
-        if (position == helper!!.adapterPosition) {
+        if (position == helper.adapterPosition) {
             LogUtils.dTag("1111", "111111")
             helper.setBackgroundColor(R.id.ll_item, Color.BLUE)
         } else {

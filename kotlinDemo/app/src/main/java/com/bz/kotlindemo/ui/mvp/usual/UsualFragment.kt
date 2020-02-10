@@ -30,11 +30,11 @@ class UsualFragment : BaseFragment(), UsualFragmentView, OnRefreshListener, OnLo
     private val VIDEO_MOUDLE = 5
     private val GIRl_MOUDLE = 6
     private var moudle = 0
-    private var present: UsualFragmentPresent? = null
-    private var usualAdapter: UsualAdapter? = null
+    lateinit var present: UsualFragmentPresent
+    lateinit var usualAdapter: UsualAdapter
     var page = 1
     var pageNumber = 10
-    var arrayList: ArrayList<Result>? = null
+    lateinit var arrayList: ArrayList<Result>
 
 
     companion object {
@@ -55,7 +55,7 @@ class UsualFragment : BaseFragment(), UsualFragmentView, OnRefreshListener, OnLo
     override fun initView() {
         showContentView()
         present = UsualFragmentPresent()
-        present!!.attach(this)
+        present.attach(this)
         rv_usual.layoutManager = (LinearLayoutManager(_mActivity))
         refresh_layout.setOnRefreshListener(this)
         refresh_layout.setOnLoadMoreListener(this)
@@ -76,31 +76,31 @@ class UsualFragment : BaseFragment(), UsualFragmentView, OnRefreshListener, OnLo
     }
 
     private fun getModelList(mode: String, number: Int, page: Int) {
-        present!!.getModelList(mode, number, page)
+        present.getModelList(mode, number, page)
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        present!!.detach()
+        present.detach()
     }
 
     override fun getData(data: ModelBean) {
         if (refresh_layout.state == RefreshState.Refreshing) {
             refresh_layout.finishRefresh()
-            arrayList!!.clear()
-            arrayList!!.apply {
+            arrayList.clear()
+            arrayList.apply {
                 addAll(data.results)
             }
 
         } else if (refresh_layout.state == RefreshState.Loading) {
             refresh_layout.finishLoadMore()
-            arrayList!!.apply {
+            arrayList.apply {
                 addAll(data.results)
             }
         }
         if (usualAdapter == null) {
             usualAdapter = UsualAdapter(_mActivity, R.layout.item_model_layout, arrayList!!)
-            rv_usual.adapter = usualAdapter!!
+            rv_usual.adapter = usualAdapter
         } else {
             usualAdapter!!.notifyDataSetChanged()
         }

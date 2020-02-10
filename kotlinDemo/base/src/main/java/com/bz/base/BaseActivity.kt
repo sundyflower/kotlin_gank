@@ -17,7 +17,6 @@ abstract class BaseActivity : SupportActivity() {
     var loadView: View? = null
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_base_layout)
@@ -27,12 +26,10 @@ abstract class BaseActivity : SupportActivity() {
     }
 
     protected fun show() {
-        if (baseDialog == null) {
-            baseDialog = BaseDialog(this)
-            baseDialog!!.show()
-        } else {
-            baseDialog!!.show()
-        }
+        baseDialog?.dismiss()
+        baseDialog = BaseDialog(this)
+        baseDialog?.show()
+
 
     }
 
@@ -70,13 +67,14 @@ abstract class BaseActivity : SupportActivity() {
     }
 
 
-
-    fun getToolbar():Toolbar{
+    fun getToolbar(): Toolbar {
         return toolbar
     }
-    fun setToolBarTitle(title:String){
+
+    fun setToolBarTitle(title: String) {
         tv_title.setText(title)
     }
+
     /**
      * 返回ui
      */

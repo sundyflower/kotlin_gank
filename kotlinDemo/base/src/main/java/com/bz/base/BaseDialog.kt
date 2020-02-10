@@ -13,9 +13,10 @@ class BaseDialog : Dialog {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.loading_dialog)
         //设置点击屏幕不消失
-        setCanceledOnTouchOutside (false)
+        setCanceledOnTouchOutside(false)
         //设置点击返回键不消失
-        setCancelable (false)
+        setCancelable(false)
     }
+
 
 }
